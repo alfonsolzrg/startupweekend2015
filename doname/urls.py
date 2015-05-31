@@ -18,4 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'', include('backend.urls')),
+    url(r'', include('landing.urls')),
+    url(r'', include('social_auth.urls')),
 ]

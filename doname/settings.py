@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend',
-    'landing'
+    'landing',
+    'social_auth'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,3 +103,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# AUTH BACKENDS
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+TWITTER_CONSUMER_KEY         = ''
+TWITTER_CONSUMER_SECRET      = ''
+FACEBOOK_APP_ID              = '103594596645899'
+FACEBOOK_API_SECRET          = '35511cfc5107ba7ce92577087a4b2932'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+LOGIN_REDIRECT_URL = '/perfil'
